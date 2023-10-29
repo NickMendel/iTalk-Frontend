@@ -2,6 +2,9 @@
     <div>
         <UserRegisterForm @createUser="createUser" />
     </div>
+    <div v-if="isSuccess" class="success-message">
+        <span>Account created successfully!</span>
+    </div>
 </template>
 
 <script>
@@ -18,7 +21,7 @@ export default {
     },
     data() {
         return {
-            
+            isSuccess: false,
         }
     },
     methods: {
@@ -31,6 +34,7 @@ export default {
             const request = axios.post('http://localhost:8080/api/v1/users/', newUser)
                 .then((response) => {
                     console.log('User created: ', response.data);
+                    this.isSuccess = true;
                 })
                 .catch((error) => {
                     console.log('Error creating user: ', error);
@@ -40,4 +44,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.success-message {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+</style>
