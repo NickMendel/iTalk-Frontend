@@ -3,7 +3,7 @@
         <div class="logo" @click="$router.push('/')">iTalk-Forum</div>
         <div class="navbar__btns">
             <MyButton>Home</MyButton>
-            <MyButton>Forum</MyButton>
+            <MyButton @click="$router.push('/forum')">Forum</MyButton>
             <MyButton>Profile</MyButton>
             <MyButton>Sign in</MyButton>
             <MyButton @click="$router.push('/newRegistration')">Sign up</MyButton> 
