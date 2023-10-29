@@ -1,5 +1,5 @@
 # italk-frontend
-
+[![CI/CD Pipeline](https://github.com/NickMendel/italk-frontend/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/NickMendel/italk-frontend/actions/workflows/ci-cd.yml)
 ## Project setup
 ```
 npm install
