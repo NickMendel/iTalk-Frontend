@@ -1,12 +1,12 @@
 <template>
     <div class="navbar">
-        <div class="logo">iTalk-Forum</div>
+        <div class="logo" @click="$router.push('/')">iTalk-Forum</div>
         <div class="navbar__btns">
             <MyButton>Home</MyButton>
             <MyButton>Forum</MyButton>
             <MyButton>Profile</MyButton>
             <MyButton>Sign in</MyButton>
-            <MyButton>Sign up</MyButton> 
+            <MyButton @click="$router.push('/newRegistration')">Sign up</MyButton> 
         </div>
     </div>
 </template>
