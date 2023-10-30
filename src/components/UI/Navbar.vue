@@ -14,6 +14,7 @@
 <script>
 import MyButton from '@/components/UI/MyButton.vue';
     export default {
+        name: 'Navbar',
         
     }
 </script>
