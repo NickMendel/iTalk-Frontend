@@ -4,7 +4,7 @@
             <SectionForm @createSection="createSection" />
         </div>
         <div>
-            <SectionList :sections="sections" />
+            <SectionList :sections="sections" @removeSection="removeSection"/>
         </div>
     </div>
 </template>
@@ -36,6 +36,16 @@ export default {
                 })
                 .catch((error) => {
                     console.log('Error creating section: ', error);
+                });
+        },
+        removeSection(section) {
+            const request = axios.delete(`http://localhost:8080/api/v1/sections/${section.id}`)
+                .then((response) => {
+                    console.log('Section deleted: ', response.data);
+                    this.fetchSections();
+                })
+                .catch((error) => {
+                    console.log('Error deleting section: ', error);
                 });
         },
         async fetchSections() {
