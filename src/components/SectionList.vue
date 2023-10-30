@@ -2,7 +2,7 @@
     <div v-if="sections.length > 0">
         <h4>Sections</h4>
         <div name="section-list">
-            <SectionItemWithButtons v-for="section in sections" :section="section" :key="section.id" />
+            <SectionItemWithButtons v-for="section in sections" :section="section" :key="section.id" @removeSection="$emit('removeSection', section)" />
         </div>
     </div>
     <div v-else>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SectionItemWithButtons from './SectionItemWithButtons.vue';
+import SectionItemWithButtons from '@/components/SectionItemWithButtons.vue';
 
 export default {
     components: { SectionItemWithButtons },

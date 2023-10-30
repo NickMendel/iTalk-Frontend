@@ -4,6 +4,7 @@
             <div><strong>Name:</strong> {{ section.name }}</div>
             <div><strong>Description:</strong> {{ section.description }}</div>
         </div>
+        <slot></slot>
     </div>
 </template>
 
