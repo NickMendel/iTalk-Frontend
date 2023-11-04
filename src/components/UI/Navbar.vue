@@ -5,8 +5,8 @@
             <MyButton>Home</MyButton>
             <MyButton @click="$router.push('/forum')">Forum</MyButton>
             <MyButton>Profile</MyButton>
-            <MyButton>Sign in</MyButton>
-            <MyButton @click="$router.push('/newRegistration')">Sign up</MyButton> 
+            <MyButton @click="$router.push('/login')">Sign in</MyButton>
+            <MyButton @click="$router.push('/register')">Sign up</MyButton> 
         </div>
     </div>
 </template>

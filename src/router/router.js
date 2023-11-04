@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import UserRegistration from '@/pages/UserRegistration.vue';
 import ForumPage from '@/pages/ForumPage.vue';
 import SectionIdPage from '@/pages/SectionIdPage.vue';
+import Login from '@/pages/LoginPage.vue';
+import Dashboard from '@/pages/DashboardPage.vue';
 
 const routes = [
     {
@@ -11,7 +13,7 @@ const routes = [
         component: Home
     },
     {
-        path: '/newRegistration',
+        path: '/register',
         name: 'UserRegistration',
         component: UserRegistration
     },
@@ -24,6 +26,16 @@ const routes = [
         path: '/sections/:id',
         name: 'Section',
         component: SectionIdPage
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    },
+    {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: Dashboard
     }
 ]
 

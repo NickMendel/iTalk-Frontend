@@ -29,12 +29,12 @@ export default {
             const newUser = {
                 username: user.username,
                 email: user.email,
-                password: user.password,
+                newPassword: user.password,
             };
-            const request = axios.post('http://localhost:8080/api/v1/users/', newUser)
+            const request = axios.post('http://localhost:8080/api/v1/register', newUser)
                 .then((response) => {
-                    console.log('User created: ', response.data);
-                    this.isSuccess = true;
+                   this.isSuccess = true;
+                   this.$router.push('/login');
                 })
                 .catch((error) => {
                     console.log('Error creating user: ', error);

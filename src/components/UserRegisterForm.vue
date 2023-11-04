@@ -3,10 +3,10 @@
         <form @submit.prevent>
             <h4>Registration</h4>
             <MyInput v-model="user.username" autocomplete="username" placeholder="Username"/>
-            <MyInput v-model="user.email" placeholder="E-Mail"/>
+            <MyInput v-model="user.email" autocomplete="email" placeholder="E-Mail"/>
             <MyInput v-model="user.password" autocomplete="new-password" type="password" placeholder="Password"/>
             <MyInput v-model="confirmPassword" type="password" placeholder="Confirm Password"/>
-            <MyButton style="align-self: flex-end;margin-top: 15px;" @click="createUser">Register</MyButton>
+            <MyButton style="align-self: center;margin-top: 15px;width: min-content;" @click="createUser">Register</MyButton>
         </form>
     </div>
 </template>
@@ -47,5 +47,7 @@ export default {
     form{
         display: flex;    
         flex-direction: column;
+        width: 50%;
+        margin: 0 auto;
     }
 </style>
