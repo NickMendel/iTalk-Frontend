@@ -17,15 +17,22 @@ const routes = [
         name: 'UserRegistration',
         component: UserRegistration
     },
-    {   path: '/forum',
+    {
+        path: '/forum',
         name: 'Forum',
-        component: ForumPage
+        component: ForumPage,
+        meta: {
+            requiresAuth: true
+        }
 
     },
     {
         path: '/sections/:id',
         name: 'Section',
-        component: SectionIdPage
+        component: SectionIdPage,
+        meta: {
+            requiresAuth: true
+        }
     },
     {
         path: '/login',
@@ -35,7 +42,10 @@ const routes = [
     {
         path: '/dashboard',
         name: 'Dashboard',
-        component: Dashboard
+        component: Dashboard,
+        meta: {
+            requiresAuth: true
+        }
     }
 ]
 
@@ -43,5 +53,13 @@ const router = createRouter({
     routes,
     history: createWebHistory(process.env.BASE_URL)
 })
+
+router.beforeEach((to, frrom, next) => {
+    if (to.meta.requiresAuth && !store.getters.isLoggedIn) {
+        next('/login');
+    } else {
+        next();
+    }
+});
 
 export default router;

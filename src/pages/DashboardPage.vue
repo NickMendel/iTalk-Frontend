@@ -6,7 +6,13 @@
 
 <script>
     export default {
-        
+        beforeRouteEnter(to, from, next) {
+            if (!store.getters['auth/isLoggendIn']) {
+                next({ path: '/login' })
+            } else {
+                next()
+            }
+        }
     }
 </script>
 
