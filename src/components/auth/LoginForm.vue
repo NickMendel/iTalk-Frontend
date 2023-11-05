@@ -1,17 +1,19 @@
 <template>
     <div>
         <div class="login-mask">
-            <form>
+            <form @submit.prevent="login">
                 <h4>Login</h4>
                 <MyInput v-model="user.username" placeholder="Username" />
                 <MyInput v-model="user.password" type="password" placeholder="Password" />
-                <MyButton style="align-self: center;margin-top: 15px;width: min-content;" @click="login">Login</MyButton>
+                <MyButton style="align-self: center;margin-top: 15px;width: min-content;" @click="login" type="submit">Login</MyButton>
             </form>
         </div>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
     data() {
         return {
@@ -29,6 +31,7 @@ export default {
                 password: '',
             };
         },
+        ...mapActions('auth', ['login']),
     },
 
 }
